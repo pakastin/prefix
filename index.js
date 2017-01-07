@@ -13,10 +13,9 @@ export default function prefix (param) {
 
   const camelCase = param[0].toUpperCase() + param.slice(1);
   const prefixes = ['webkit', 'moz', 'ms', 'o'];
-  let test;
 
   for (let i = 0, len = prefixes.length; i < len; i++) {
-    test = prefixes[i] + camelCase;
+    const test = prefixes[i] + camelCase;
 
     if (typeof style[test] !== 'undefined') {
       return (memoized[param] = test);

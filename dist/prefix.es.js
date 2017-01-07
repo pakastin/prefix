@@ -12,10 +12,9 @@ function prefix (param) {
 
   var camelCase = param[0].toUpperCase() + param.slice(1);
   var prefixes = ['webkit', 'moz', 'ms', 'o'];
-  var test;
 
   for (var i = 0, len = prefixes.length; i < len; i++) {
-    test = prefixes[i] + camelCase;
+    var test = prefixes[i] + camelCase;
 
     if (typeof style[test] !== 'undefined') {
       return (memoized[param] = test);
