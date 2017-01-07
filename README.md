@@ -23,3 +23,6 @@ const translate = (x, y) => `translate(${x}px, ${y}px)`;
 el.style[TRANSFORM] = translate(100, 0);
 el.style[TRANSITION] = `${TRANSFORM} .2s`;
 ```
+
+## License
+[MIT](https://github.com/pakastin/prefix/LICENSE)
