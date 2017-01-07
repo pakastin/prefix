@@ -9,11 +9,6 @@ CSS auto-prefix in < 0.5 KB (before GZIP)
 
     npm install @pakastin/prefix
     
-## oldskool
-```html
-<script src="https://pakastin.github.io/prefix/prefix.min.js"></script>
-```
-
 ## usage
 
 ```js
@@ -28,6 +23,12 @@ const el = document.createElement('p');
 
 el.style[TRANSITION] = `${TRANSFORM} .2s`;
 el.style[TRANSFORM] = translate(100, 0);
+```
+
+## oldskool
+```html
+<script src="https://pakastin.github.io/prefix/prefix.min.js"></script>
+<script>prefix(...)</script>
 ```
 
 ## License
