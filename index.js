@@ -2,7 +2,7 @@
 const style = document.createElement('p').style;
 const memoized = {};
 
-export function prefix (param) {
+export default function prefix (param) {
   if (typeof memoized[param] !== 'undefined') {
     return memoized[param];
   }

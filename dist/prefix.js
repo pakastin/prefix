@@ -1,8 +1,8 @@
 (function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
-  typeof define === 'function' && define.amd ? define(['exports'], factory) :
-  (factory((global.prefix = global.prefix || {})));
-}(this, (function (exports) { 'use strict';
+  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
+  typeof define === 'function' && define.amd ? define(factory) :
+  (global.prefix = factory());
+}(this, (function () { 'use strict';
 
 var style = document.createElement('p').style;
 var memoized = {};
@@ -31,8 +31,6 @@ function prefix (param) {
   }
 }
 
-exports.prefix = prefix;
-
-Object.defineProperty(exports, '__esModule', { value: true });
+return prefix;
 
 })));

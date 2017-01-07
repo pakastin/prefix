@@ -25,4 +25,4 @@ function prefix (param) {
   }
 }
 
-export { prefix };
+export default prefix;

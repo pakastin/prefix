@@ -1,5 +1,5 @@
 {
-  "name": "prefix",
+  "name": "@pakastin/prefix",
   "version": "0.0.1",
   "description": "CSS auto-prefix",
   "module": "dist/prefix.es.js",
