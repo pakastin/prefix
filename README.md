@@ -18,6 +18,8 @@ import prefix from '@pakastin/prefix';
 const TRANSFORM = prefix('transform');
 const TRANSITION = prefix('transition');
 
-el.style[TRANSFORM] = 'translate(100px, 0)';
+const translate = (x, y) => `translate(${x}px, ${y}px)`;
+
+el.style[TRANSFORM] = translate(100, 0);
 el.style[TRANSITION] = `${TRANSFORM} .2s`;
 ```
