@@ -1,5 +1,5 @@
 
-const style = document.createElement('p').style;
+const style = document ? document.createElement('p').style : {};
 const memoized = {};
 
 export default function prefix (param) {
@@ -8,8 +8,7 @@ export default function prefix (param) {
   }
 
   if (typeof style[param] !== 'undefined') {
-    memoized[param] = param;
-    return param;
+    return (memoized[param] = param);
   }
 
   const camelCase = param[0].toUpperCase() + param.slice(1);
@@ -20,8 +19,11 @@ export default function prefix (param) {
     test = prefixes[i] + camelCase;
 
     if (typeof style[test] !== 'undefined') {
-      memoized[param] = test;
-      return test;
+      return (memoized[param] = test);
     }
+  }
+
+  if (!memoized[param]) {
+    return (memoized[param] = param);
   }
 }

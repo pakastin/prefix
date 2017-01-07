@@ -4,7 +4,7 @@
   (global.prefix = factory());
 }(this, (function () { 'use strict';
 
-var style = document.createElement('p').style;
+var style = document ? document.createElement('p').style : {};
 var memoized = {};
 
 function prefix (param) {
@@ -13,8 +13,7 @@ function prefix (param) {
   }
 
   if (typeof style[param] !== 'undefined') {
-    memoized[param] = param;
-    return param;
+    return (memoized[param] = param);
   }
 
   var camelCase = param[0].toUpperCase() + param.slice(1);
@@ -25,9 +24,12 @@ function prefix (param) {
     test = prefixes[i] + camelCase;
 
     if (typeof style[test] !== 'undefined') {
-      memoized[param] = test;
-      return test;
+      return (memoized[param] = test);
     }
+  }
+
+  if (!memoized[param]) {
+    return (memoized[param] = param);
   }
 }
 
