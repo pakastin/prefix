@@ -1,6 +1,5 @@
 [![js-semistandard-style](https://img.shields.io/badge/code%20style-semistandard-brightgreen.svg?maxAge=3600&style=flat-square)](https://github.com/Flet/semistandard)
 [![npm](https://img.shields.io/npm/v/@pakastin/prefix.svg?maxAge=60&style=flat-square)](https://www.npmjs.com/package/@pakastin/prefix)
-[![npm](https://img.shields.io/npm/l/@pakastin/prefix.svg?maxAge=60&style=flat-square)](https://github.com/pakastin/prefix/blob/master/LICENSE)
 [![Twitter Follow](https://img.shields.io/twitter/follow/pakastin.svg?style=social&maxAge=3600)](https://twitter.com/pakastin)
 
 # prefix
