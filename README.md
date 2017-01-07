@@ -24,8 +24,10 @@ const TRANSITION = prefix('transition');
 
 const translate = (x, y) => `translate(${x}px, ${y}px)`;
 
-el.style[TRANSFORM] = translate(100, 0);
+const el = document.createElement('p');
+
 el.style[TRANSITION] = `${TRANSFORM} .2s`;
+el.style[TRANSFORM] = translate(100, 0);
 ```
 
 ## License
