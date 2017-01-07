@@ -25,4 +25,4 @@ el.style[TRANSITION] = `${TRANSFORM} .2s`;
 ```
 
 ## License
-[MIT](https://github.com/pakastin/prefix/LICENSE)
+[MIT](https://github.com/pakastin/prefix/blob/master/LICENSE)
