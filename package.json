@@ -1,0 +1,21 @@
+{
+  "name": "prefix",
+  "version": "0.0.1",
+  "description": "CSS auto-prefix",
+  "module": "dist/prefix.es.js",
+  "main": "dist/prefix.js",
+  "scripts": {
+    "dist": "gh-pages -d dist",
+    "build": "npm run build-js && npm run build-es && npm run uglify",
+    "build-js": "rollup -c -f umd --name prefix index.js -o dist/prefix.js",
+    "build-es": "rollup -c -f es index.js -o dist/prefix.es.js",
+    "uglify": "uglifyjs dist/prefix.js -cmo dist/prefix.min.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Juha Lindstedt",
+  "license": "ISC",
+  "devDependencies": {
+    "rollup": "~0.41.1",
+    "rollup-plugin-buble": "~0.15.0"
+  }
+}
