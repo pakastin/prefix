@@ -1,5 +1,5 @@
 # prefix
-CSS auto-prefix
+CSS auto-prefix in < 0.5 KB (before GZIP)
 
 ## install
 
