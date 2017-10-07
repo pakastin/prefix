@@ -1,10 +1,11 @@
 (function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
-  typeof define === 'function' && define.amd ? define(factory) :
-  (global.prefix = factory());
+	typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
+	typeof define === 'function' && define.amd ? define(factory) :
+	(global.prefix = factory());
 }(this, (function () { 'use strict';
 
-var style = document ? document.createElement('p').style : {};
+var isBrowser = typeof document !== 'undefined';
+var style = isBrowser ? document.createElement('p').style : {};
 var memoized = {};
 
 function prefix (param) {
@@ -27,11 +28,13 @@ function prefix (param) {
     }
   }
 
-  if (!memoized[param]) {
-    return (memoized[param] = param);
-  }
+  return (memoized[param] = param);
 }
 
-return prefix;
+function identity (param) { return param; }
+
+var index = isBrowser ? prefix : identity;
+
+return index;
 
 })));

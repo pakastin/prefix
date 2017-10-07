@@ -1,8 +1,9 @@
 
-const style = document ? document.createElement('p').style : {};
+const isBrowser = typeof document !== 'undefined';
+const style = isBrowser ? document.createElement('p').style : {};
 const memoized = {};
 
-export default function prefix (param) {
+function prefix (param) {
   if (typeof memoized[param] !== 'undefined') {
     return memoized[param];
   }
@@ -22,7 +23,9 @@ export default function prefix (param) {
     }
   }
 
-  if (!memoized[param]) {
-    return (memoized[param] = param);
-  }
+  return (memoized[param] = param);
 }
+
+function identity (param) { return param; }
+
+export default (isBrowser ? prefix : identity);
