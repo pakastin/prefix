@@ -1,4 +1,5 @@
-var style = document ? document.createElement('p').style : {};
+var isBrowser = typeof document !== 'undefined';
+var style = isBrowser ? document.createElement('p').style : {};
 var memoized = {};
 
 function prefix (param) {
@@ -21,9 +22,11 @@ function prefix (param) {
     }
   }
 
-  if (!memoized[param]) {
-    return (memoized[param] = param);
-  }
+  return (memoized[param] = param);
 }
 
-export default prefix;
+function identity (param) { return param; }
+
+var index = (isBrowser ? prefix : identity);
+
+export default index;
