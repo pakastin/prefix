@@ -1,6 +1,6 @@
 {
   "name": "@pakastin/prefix",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "CSS auto-prefix",
   "module": "dist/prefix.es.js",
   "jsnext:main": "dist/prefix.es.js",
