@@ -27,6 +27,6 @@ function prefix (param) {
 
 function identity (param) { return param; }
 
-var index = isBrowser ? prefix : identity;
+var index = (isBrowser ? prefix : identity);
 
 export default index;
